@@ -1,30 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>多个图片</title>
-</head>
-<style>
-    img{
-	  position: relative;
-	  left: 25%;
-	  height: 1200px;
-	  width: 1200px;
-	  margin-top: 8%;
-	  margin-left: 100px;
-    }
-  </style>
-<body>
-<div>
-<img src="images/1.jpg" alt="图片1">
-  <img src="images/2.jpg" alt="图片1">
-  <img src="images/3.jpg" alt="图片1">
-</div>
-
-<div style="margin-top:-5%">
-<img src="images/4.jpg" alt="图片1">
-  <img src="images/5.jpg" alt="图片1">
-  <img src="images/6.jpg" alt="图片1">
-</div>
-  
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>介绍图</title>
+		<style>
+			*{
+				margin:0;
+				padding: 0;
+			}
+			.box{
+				width:1000px;
+				height: 600px;
+				--border:1px;
+				margin:auto;
+				margin-top:200px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-size: 100% 100%;
+			}
+			/*.box img{
+				width: 1000px;
+				height: 600px;
+			}*/
+			#pic{
+				width:1000px;
+				height:520px;
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+			}
+			.btn{
+				width:120px;
+				height:40px;
+				margin-top:
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img id="pic" src="images/1.jpg" />
+		</div>
+		<div>
+				<input type="button" class="btn" style="display:none"  value="上一张"/>
+				<input type="button" class="btn" style="display:none" value="下一张" />
+			</div>
+		<script>
+			var pic=document.getElementById("pic");
+			var preBtn=document.getElementsByClassName("btn")[0];
+			var nextBtn=document.getElementsByClassName("btn")[1];
+//			
+			preBtn.onclick=function()
+			{
+				n--;
+				if(n==0)
+				{
+					n=6;
+				}
+				pic.src="images/"+n+".jpg"
+			}
+			nextBtn.onclick=function(){
+				picLunH();
+			}
+			var n=1;
+			function picLunH(){
+				n++;
+				if(n==7)
+				{
+					n=1;
+				}
+				pic.src="images/"+n+".jpg"
+				
+			}
+			setInterval(picLunH,2000);
+		</script>
+	</body>
 </html>
+
