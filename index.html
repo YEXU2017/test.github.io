@@ -2,64 +2,24 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>介绍图</title>
+		<title></title>
 		<style>
-			*{
-				margin:0;
-				padding: 0;
-			}
-			.box{
-				width:1000px;
-				height: 600px;
-				--border:1px;
-				margin:auto;
-				margin-top:200px;
-				background-repeat: no-repeat;
-				background-size: cover;
-				background-size: 100% 100%;
-			}
-			/*.box img{
-				width: 1000px;
-				height: 600px;
-			}*/
+		
+		
 			#pic{
 				width:1000px;
 				height:520px;
-				background-repeat: no-repeat;
-				background-size: 100% 100%;
-			}
-			.btn{
-				width:120px;
-				height:40px;
-				margin-top:
+				margin:auto;
+				margin-top:10%;
+				margin-left:23%;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="box">
-			<img id="pic" src="images/1.jpg" />
+		<div >
+			<img id="pic" src="images/1.jpg" alt="" title="图片" />
 		</div>
-		<div>
-				<input type="button" class="btn" style="display:none"  value="上一张"/>
-				<input type="button" class="btn" style="display:none" value="下一张" />
-			</div>
 		<script>
-			var pic=document.getElementById("pic");
-			var preBtn=document.getElementsByClassName("btn")[0];
-			var nextBtn=document.getElementsByClassName("btn")[1];
-//			
-			preBtn.onclick=function()
-			{
-				n--;
-				if(n==0)
-				{
-					n=6;
-				}
-				pic.src="images/"+n+".jpg"
-			}
-			nextBtn.onclick=function(){
-				picLunH();
-			}
 			var n=1;
 			function picLunH(){
 				n++;
